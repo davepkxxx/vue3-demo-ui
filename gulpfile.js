@@ -3,12 +3,16 @@ const ts = require("@rollup/plugin-typescript");
 const vue = require("@vitejs/plugin-vue");
 const { watch } = require("gulp");
 const { rollup } = require("rollup");
+const css = require("rollup-plugin-css-only");
+const resolve = require("rollup-plugin-node-resolve");
 
 async function build() {
   const bundle = await rollup({
     input: "src/index.ts",
     external: "vue",
     plugins:[
+      css({ output: "index.css" }),
+      resolve(),
       ts({ tsconfig: "./tsconfig.json" }),
       vue(),
     ],
@@ -18,8 +22,11 @@ async function build() {
     file: `dist/index.${format === "es" ? "esm" : format}.js`,
     format,
     name: "DemoUI",
-    exports: "auto",
+    exports: "named",
     sourcemap: true,
+    globals: {
+      vue: "Vue",
+    },
   })));
 
   return bundle;

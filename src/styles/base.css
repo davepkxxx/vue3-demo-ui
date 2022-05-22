@@ -1,0 +1,14 @@
+body {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
+:root {
+  --demo-color: #fff;
+  --demo-color-inverse: #000;
+  --demo-disabled: #0000001f;
+  --demo-disabled-fgcolor: #0000004d;
+  --demo-outline: #0000001f;
+  --demo-primary: #1976d2;
+  --demo-primary-hover: #1565c0;
+  --demo-primary-hover-inverse: #1976d20a;
+}

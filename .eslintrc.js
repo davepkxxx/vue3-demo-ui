@@ -21,12 +21,14 @@ module.exports = {
     "@typescript-eslint",
   ],
   rules: {
+    "@typescript-eslint/no-empty-function": ["off"],
+    "@typescript-eslint/no-unused-vars": ["off"],
+    "@typescript-eslint/no-var-requires": ["off"],
     "arrow-parens": ["error", "always"],
     "comma-dangle": ["error", "always-multiline"],
     "eol-last": ["error", "always"],
     "quotes": ["error", "double"],
     "semi": ["error", "always"],
-    "@typescript-eslint/no-empty-function": ["off"],
-    "@typescript-eslint/no-var-requires": ["off"],
+    "vue/require-default-prop": ["off"],
   },
 };
